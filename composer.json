@@ -1,0 +1,25 @@
+{
+    "name": "phpOfficeWrapper",
+    "description": "Wrapper for PHPOffice library",
+    "type": "wrapper",
+    "keywords": ["PHP","Excel", "xlsx","xls", "phpoffice", "phpexcel"],
+    "license": "GNU",
+    "authors": [
+        {
+            "name": "Vlad Fanatov",
+            "email": "fan.oldschool@gmail.com",
+            "homepage": "https://www.linkedin.com/in/fan37/"
+        }
+    ],
+    "config": {
+        "bin-dir": "bin"
+    },
+    "require": {
+        "php": "~7"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhpOfficeWrapper\\": "src"
+        }
+    }
+}

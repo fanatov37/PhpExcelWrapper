@@ -15,16 +15,16 @@ abstract class Excel2007 extends Document
      * @return \PHPExcel_Writer_IWriter
      * @throws \PHPExcel_Reader_Exception
      */
-    protected function _createWriter(PHPExcel $phpExcel)
+    final protected function createWriter(PHPExcel $phpExcel)
     {
         return PHPExcel_IOFactory::createWriter($phpExcel, 'Excel2007');
     }
     /**
      * (non-PHPDoc)
      *
-     * @see Document::_getContentType()
+     * @see Document::getContentType()
      */
-    protected function _getContentType() : string
+    final protected function getContentType() : string
     {
         return 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
     }
@@ -32,7 +32,7 @@ abstract class Excel2007 extends Document
     /**
      * @return string
      */
-    protected function _getFileExtension() : string
+    protected function getFileExtension() : string
     {
         return 'xlsx';
     }

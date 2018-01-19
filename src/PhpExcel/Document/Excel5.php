@@ -12,9 +12,9 @@ abstract class Excel5 extends Document
     /**
      * (non-PHPDoc)
      *
-     * @see Document::_createWriter()
+     * @see Document::createWriter()
      */
-    protected function _createWriter(PHPExcel $phpExcel)
+    final protected function createWriter(PHPExcel $phpExcel)
     {
         return new PHPExcel_Writer_Excel5($phpExcel);
     }
@@ -22,9 +22,9 @@ abstract class Excel5 extends Document
     /**
      * (non-PHPDoc)
      *
-     * @see Document::_getContentType()
+     * @see Document::getContentType()
      */
-    protected function _getContentType() : string
+    final protected function getContentType() : string
     {
         return 'application/vnd.ms-excel';
     }
@@ -32,7 +32,7 @@ abstract class Excel5 extends Document
     /**
      * @return string
      */
-    protected function _getFileExtension() : string
+    protected function getFileExtension() : string
     {
         return 'xls';
     }

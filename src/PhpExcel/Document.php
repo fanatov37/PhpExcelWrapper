@@ -1,69 +1,63 @@
 <?php
-
 namespace PhpOfficeWrapper\Phpexcel;
 
 use PHPExcel;
 use Exception;
 use PHPExcel_Writer_IWriter;
 use DateTime;
-
-
+/**
+ * Class Document
+ *
+ * @link https://github.com/fanatov37/PhpOfficeWrapper.git for the canonical source repository
+ * @copyright Copyright (c)
+ * @license MIT
+ * @author VladFanatov
+ * @package PhpOfficeWrapper\Phpexcel
+ */
 abstract class Document
 {
     public const MAX_STRLENGTH_FOR_TITLE = 31;
     public const INVALID_TITLE_CHARACTERS = ['*', ':', '/', '\\', '?', '[', ']'];
-
     /**
      * @var \PHPExcel
      */
     protected $phpExcel;
-
     /**
      * @var PHPExcel_Writer_IWriter
      */
     protected $writer;
-
     /**
      * @var boolean
      */
     protected $isRendered = false;
-
     /**
      * @return string
      */
     abstract protected function getContentType() : string;
-
     /**
      * @return PHPExcel_Writer_IWriter
      */
     abstract protected function createWriter(PHPExcel $phpExcel);
-
     /**
      * (non-PHPDoc)
      */
     abstract protected function renderColumn();
-
     /**
      * (non-PHPDoc)
      */
     abstract protected function renderValue();
-
     /**
      * (non-PHPDoc)
      */
     abstract protected function renderStyle();
-
     /**
      * @return string
      */
     abstract protected function getFileExtension() : string;
-
     /**
      * @return string
      */
     abstract protected function getFilename() : string;
-
-
     /**
      * @return PHPExcel
      */
@@ -71,7 +65,6 @@ abstract class Document
     {
         return new PHPExcel();
     }
-
     /**
      * @return PHPExcel
      *
@@ -90,8 +83,6 @@ abstract class Document
         }
         return $this->phpExcel;
     }
-
-
     /**
      * (non-PHPDoc)
      */
@@ -101,7 +92,6 @@ abstract class Document
         $this->renderColumn();
         $this->renderStyle();
     }
-
     /**
      * @return self
      */
@@ -114,7 +104,6 @@ abstract class Document
 
         return $this;
     }
-
     /**
      * @return PHPExcel_Writer_IWriter
      *
@@ -133,7 +122,6 @@ abstract class Document
         }
         return $this->writer;
     }
-
     /**
      * @param $fileName
      *
@@ -147,7 +135,6 @@ abstract class Document
 
         return $this;
     }
-
     /**
      * @param $creatorName
      *
@@ -160,7 +147,6 @@ abstract class Document
 
         return $this;
     }
-
     /**
      * @param DateTime|NULL $time
      *
@@ -177,9 +163,9 @@ abstract class Document
 
         return $this;
     }
-
     /**
      * @throws Exception
+     * @throws \PHPExcel_Writer_Exception
      */
     final public function download()
     {
@@ -199,7 +185,6 @@ abstract class Document
         $this->save('php://output');
         die();
     }
-
     /**
      * currently need refactoring
      *
@@ -225,7 +210,6 @@ abstract class Document
 
         return TmpFileStorage::addFile($file);
     }
-
     /**
      * @return string
      * @throws Exception

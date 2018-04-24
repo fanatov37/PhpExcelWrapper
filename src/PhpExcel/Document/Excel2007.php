@@ -1,12 +1,18 @@
 <?php
-
 namespace PhpOfficeWrapper\PhpExcel\Document;
 
 use PHPExcel;
 use PHPExcel_IOFactory;
 use PhpOfficeWrapper\PhpExcel\Document;
-
-
+/**
+ * Class Excel2007
+ *
+ * @link https://github.com/fanatov37/PhpOfficeWrapper.git for the canonical source repository
+ * @copyright Copyright (c)
+ * @license MIT
+ * @author VladFanatov
+ * @package PhpOfficeWrapper\PhpExcel\Document
+ */
 abstract class Excel2007 extends Document
 {
     /**
@@ -28,7 +34,6 @@ abstract class Excel2007 extends Document
     {
         return 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
     }
-
     /**
      * @return string
      */

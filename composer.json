@@ -1,5 +1,5 @@
 {
-    "name": "phpOfficeWrapper",
+    "name": "fanatov37/phpOfficeWrapper",
     "description": "Wrapper for PHPOffice library",
     "type": "wrapper",
     "keywords": ["PHP","Excel", "xlsx","xls", "phpoffice", "phpexcel"],

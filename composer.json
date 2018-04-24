@@ -3,7 +3,7 @@
     "description": "Wrapper for PHPOffice library",
     "type": "wrapper",
     "keywords": ["PHP","Excel", "xlsx","xls", "phpoffice", "phpexcel"],
-    "license": "GNU",
+    "license": "MIT",
     "authors": [
         {
             "name": "Vlad Fanatov",
